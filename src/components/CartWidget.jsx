@@ -1,9 +1,11 @@
-function CartWidget() {
+import Badge from 'react-bootstrap/Badge';
+import Button from 'react-bootstrap/Button';
+
+function CartWidget () {
 return (
-    <button className="cart-btn" aria-label="Carrito de compras">
-    <span aria-hidden="true">🛒</span>
-    <span className="badge" aria-label="4 artículos en el carrito">4</span>
-    </button>
+    <Button variant='light'>
+    🛒<Badge bg='dark'>4</Badge>
+    </Button>
 );
 }
 

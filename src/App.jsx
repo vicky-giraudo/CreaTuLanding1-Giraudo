@@ -1,19 +1,12 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
-import './App.css';
-import NavBar from './components/Navbar.jsx';
-import ItemListContainer from './components/ItemListContainer';
+import './App.css'
+import NavBar from './components/NavBar.jsx'
+import ItemListContainer from './components/ItemListContainer.jsx'
 
-function App() {
+export default function App() {
   return (
     <>
       <NavBar />
-      <main className="container">
-        <ItemListContainer text="Iluminamos tus espacios" />
-      </main>
+      <ItemListContainer text="Tu sello, en cada detalle" />
     </>
-  );
+  )
 }
-
-export default App;

@@ -1,32 +1,22 @@
-import CartWidget from './CartWidget.jsx';
-
-const CATEGORIES = ['De pie', 'De techo', 'De escritorio'];
-
-function NavBar() {
+// src/components/NavBar.jsx
+import Container from 'react-bootstrap/Container'
+import Nav from 'react-bootstrap/Nav'
+import Navbar from 'react-bootstrap/Navbar'
+import CartWidget from './CartWidget.jsx'
+export default function NavBar() {
 return (
-    <header className="navbar" role="banner">
-    <a href="#" className="brand" aria-label="Inicio - Básico iluminación">
-        <h1 className="brand-title">Básico iluminación</h1>
-    </a>
-
-    <nav className="nav-links" aria-label="Categorías de productos" role="navigation">
-        <ul>
-        {CATEGORIES.map(function (cat) {
-            return (
-            <li key={cat} className="nav-item">
-                <a href="#" className="nav-link">{cat}</a>
-            </li>
-            );
-        })}
-        </ul>
-    </nav>
-
-    <div className="cart-area">
+    <Navbar bg='light' data-bs-theme="light">
+    <Container>
+        <Navbar.Brand href="#">AMAVI</Navbar.Brand>
+        <Nav className="me-auto" variant="underline" defaultActiveKey="/home">
+        <Nav.Link href="/home">Anillos</Nav.Link>
+        <Nav.Link eventKey="link-1">Dijes</Nav.Link>
+        <Nav.Link eventKey="link-2">Pulseras</Nav.Link>
+        <Nav.Link eventKey="link-3">Aros</Nav.Link>
+        </Nav>
         <CartWidget />
-    </div>
-    </header>
-);
+    </Container>  
+    </Navbar>
+)
 }
-
-export default NavBar;
 
