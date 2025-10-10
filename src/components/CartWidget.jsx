@@ -1,11 +1,17 @@
-import Badge from 'react-bootstrap/Badge'
-import Button from 'react-bootstrap/Button'
+import Badge from 'react-bootstrap/Badge';
+import Button from 'react-bootstrap/Button';
+import { useContext } from 'react';
+import { CartContext } from '../context/CartContext';
+import { useNavigate } from 'react-router-dom';
 
-export default function CartWidget({ count = 0, onClick }) {
-return (
-    <Button variant="light" onClick={onClick} aria-label={`Abrir carrito, ${count} productos`}>
-    🛒 <Badge bg="dark" pill className="ms-1">{count}</Badge>
-    <span className="visually-hidden">productos en el carrito</span>
-    </Button>
-)
-}
+function CartWidget() {
+    const { getQuantity } = useContext(CartContext);
+    const quantity = getQuantity();
+    const navigate = useNavigate();
+    return (
+        <Button variant="dark" onClick={() => navigate('/cart')}>
+        🛒 <Badge bg='secondary'>{quantity}</Badge>
+        </Button>
+    )
+};
+export default CartWidget;
